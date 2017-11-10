@@ -1,0 +1,26 @@
+{
+  "name": "birthslayer",
+  "version": "1.0.0",
+  "description": "buy gifts automagically",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"hello\";",
+    "start": "nodemon ./bin/www"
+  },
+  "keywords": [
+    "birthday",
+    "slayer"
+  ],
+  "author": "thom, eric",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.2",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.12.1",
+    "pug": "^2.0.0-rc.4",
+    "puppeteer": "^0.12.0",
+    "simple-headless-chrome": "^4.3.10"
+  }
+}
