@@ -33,6 +33,17 @@ router.get('/', function(reg, res){
       await mainTab.fill("#login-email", "gisheri@gmail.com");
       await mainTab.fill("#login-password", "wish.com");
       await mainTab.click("#email-login-form .submit-btn");
+      // Get a HTML tag value based on class id
+      const bodyHTML = await mainTab.evaluate(function(selector) {
+          const selectorHtml = document.querySelector(selector)
+          return selectorHtml.innerHTML
+      }, 'body'); // returns innerHTML of first matching selector for class "main"
+      // x = await mainTab.querySelector("body");
+      // let el = document.createElement( 'html' );
+      // el.innerHTML = bodyHTML;
+      // const prices = el.querySelectorAll(".feed-actual-price");
+      console.log(bodyHTML);
+      
       // await mainTab.evaluate(function(;));
       // await maintab.injectScript(`
       //  $('#header-logo-image').click();
