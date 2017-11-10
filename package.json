@@ -11,6 +11,9 @@
     "birthday",
     "slayer"
   ],
+  "engines": {
+    "node": ">= 8.9.1"
+  },
   "author": "thom, eric",
   "license": "ISC",
   "dependencies": {
