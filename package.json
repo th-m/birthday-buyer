@@ -22,5 +22,10 @@
     "pug": "^2.0.0-rc.4",
     "puppeteer": "^0.12.0",
     "simple-headless-chrome": "^4.3.10"
-  }
+  },
+  "buildpacks": [
+   {
+     "url": "https://github.com/heroku/heroku-buildpack-google-chrome"
+   }
+ ],
 }
