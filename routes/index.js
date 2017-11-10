@@ -19,7 +19,7 @@ router.get('/', function(reg, res){
   // const HeadlessChrome = require('../index')
   const browser = new HeadlessChrome({
     headless: false
-  })
+  });
   async function navigateWebsite () {
     try {
       await browser.init()
@@ -82,8 +82,8 @@ router.get('/', function(reg, res){
     } catch (err) {
       console.log('ERROR!', err)
     }
-  }
-  navigateWebsite()
+  };
+  navigateWebsite();
   // const test = (async () => {
   //   const browser = await puppeteer.launch();
   //   const page = await browser.newPage();
