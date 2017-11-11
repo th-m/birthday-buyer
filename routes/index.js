@@ -26,7 +26,7 @@ router.get('/', function(reg, res){
       const mainTab = await browser.newTab({
         privateTab: false
       })
-      // gisheri@gmail.com
+      // gisheri@gmail.com 
       // wish.com
       await mainTab.goTo(wishURL);
       await mainTab.click("#signup-form .email-login-btn");
