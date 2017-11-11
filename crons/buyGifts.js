@@ -27,6 +27,14 @@ firebaseAuth().signInWithEmailAndPassword("buyer@bot.com", "buystuff").then(func
     console.log("Something went wrong.");
     console.log(error);
   }
+  
+  fetch('https://birthdaybuyer.herokuapp.com/').then(function(response) {
+    return response.blob();
+  }).then(function(myBlob) {
+    var objectURL = URL.createObjectURL(myBlob);
+    myImage.src = objectURL;
+  });
+  
 });
 // export const ref = firebase.database().ref()
 
