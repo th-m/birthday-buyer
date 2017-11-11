@@ -15,13 +15,13 @@ firebase.initializeApp(config)
 const firebaseAuth = firebase.auth;
 firebaseAuth().signInWithEmailAndPassword("buyer@bot.com", "buystuff").then(function(){
   const database = firebase.database();
-  const formsInfo = database.ref('forms');
-  formsInfo.on("value", gotData, errData);
+  const birthdays = database.ref('birthdays');
+  birthdays.on("value", gotData, errData);
   
   function gotData(data){
     console.log(data.val());
-    let forms = data.val();
-    let keys = Object.keys(forms);
+    let birthday = data.val();
+    let keys = Object.keys(birthday);
     console.log(keys);
   }
   
