@@ -23,6 +23,7 @@
     "express": "^4.16.2",
     "firebase": "^4.6.2",
     "morgan": "^1.9.0",
+    "node-fetch": "^1.7.3",
     "nodemon": "^1.12.1",
     "pug": "^2.0.0-rc.4",
     "puppeteer": "^0.12.0",

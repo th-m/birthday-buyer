@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 // import firebase from 'firebase'
+var fetch = require('node-fetch');
 var firebase = require('firebase');
 const config = {
    apiKey: "AIzaSyAjSKA0Ti0_X4A5XQhcaVh68lu08waEniM",
@@ -28,35 +29,12 @@ firebaseAuth().signInWithEmailAndPassword("buyer@bot.com", "buystuff").then(func
     console.log("Something went wrong.");
     console.log(error);
   }
-  let urlEncodedDataPairs = [];
-  urlEncodedDataPairs.push(encodeURIComponent("test") + '=' + encodeURIComponent('value'));
-  
-  // for (var entry of formData.entries()){
-  //    urlEncodedDataPairs.push(encodeURIComponent(entry[0]) + '=' + encodeURIComponent(entry[1]));
-  // }
-  urlEncodedData = urlEncodedDataPairs.join('&').replace(/%20/g, '+');
-  let myHeaders = new Headers();
-  myHeaders.append('Content-Type', 'application/x-www-form-urlencoded');
-  myHeaders.append('Accept', 'text/html'); 
-
-  let myInit = {
-                method: "POST",
-                 headers: myHeaders,
-                 // body: urlEncodedData,
-                 mode: 'cors',
-                 cache: 'default' 
-               };
-           
-  fetch('https://birthdaybuyer.herokuapp.com/', myInit).then(function(response) {
-    return response.blob();
-  }).then(function(data) {
-    if(data.error){
-      console.log(data.error);
-    }else{
-      console.log(data);
-    }
-  });
-  
+  fetch('https://birthdaybuyer.herokuapp.com/', { method: 'POST', body: 'a=1' })
+    .then(function(res) {
+        return res.json();
+    }).then(function(json) {
+        console.log(json);
+    });
   
   
 });
