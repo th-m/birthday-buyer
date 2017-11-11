@@ -27,13 +27,15 @@ router.get('/', function(reg, res){
       const mainTab = await browser.newTab({
         privateTab: false
       })
-      // gisheri@gmail.com  
+      // gisheri@gmail.com
       // wish.com
       await mainTab.goTo(wishURL);
       await mainTab.click("#signup-form .email-login-btn");
       await mainTab.fill("#login-email", "gisheri@gmail.com");
       await mainTab.fill("#login-password", "wish.com");
       await mainTab.click("#email-login-form .submit-btn");
+
+      await mainTab.waitForPageToLoad()
       // Get a HTML tag value based on class id
       const bodyHTML = await mainTab.evaluate(function(selector) {
           const selectorHtml = document.querySelector(selector)
@@ -44,13 +46,13 @@ router.get('/', function(reg, res){
       // el.innerHTML = bodyHTML;
       // const prices = el.querySelectorAll(".feed-actual-price");
       console.log(bodyHTML);
-      
+
       // await mainTab.evaluate(function(;));
       // await maintab.injectScript(`
       //  $('#header-logo-image').click();
-      // //   console.log('hello'); 
+      // //   console.log('hello');
       // //   console.log($('#brand-category-menu li'));
-      // 
+      //
       // `);
       // var element = mainTab.querySelector("#ap_password");
       // await mainTab.click("input#signInSubmit");
@@ -70,16 +72,16 @@ router.get('/', function(reg, res){
       //     mainTab.fill("#ap_password", "Eleventy7!");
       //   }
       // });
-      
+
       // await mainTab.wait(1000);
       // await mainTab.click("input#signInSubmit");
        // mainTab.keyboardEvent('keypress', 'Enter');
-      
-      
+
+
        // mainTab.focus("#ap_email");
-      // 
+      //
       //  mainTab.click("input#continue");
-      //  
+      //
       //  mainTab.keyboardEvent('keypress', 'Enter');
       //  mainTab.keyboardEvent('keypress', 13);
       //  mainTab.fill("#ap_email", "thomvaladez@gmail.com");
@@ -88,7 +90,7 @@ router.get('/', function(reg, res){
       //  mainTab.keyboardEvent('keypress', 13);
       // awai
       // await mainTab.goTo("https://www.amazon.com/gp/holidaytoylist/ref=gbps_ftr_e10_f152_prc_-25?pf_rd_p=e441df97-d08b-48ff-aa69-f6bf6ab7f152&pf_rd_r=F6EVT4RW0YT9FRTG3DEH&gb_f_htl2017shopall=dealStates:AVAILABLE%252CWAITLIST%252CWAITLISTFULL%252CUPCOMING%252CEXPIRED%252CSOLDOUT,dealTypes:EVENT_DEAL,price_range:-25&pf_rd_s=events-center-c-10&pf_rd_t=701&pf_rd_i=HTL_desktop&pf_rd_m=ATVPDKIKX0DER&ie=UTF8");
-      
+
 
       //await browser.close()
     } catch (err) {
@@ -101,7 +103,7 @@ router.get('/', function(reg, res){
   //   const page = await browser.newPage();
   //   await page.goto('https://example.com');
   //   await page.screenshot({path: 'example.png'});
-  // 
+  //
   //   await browser.close();
   //   console.log(page);
   // })();
@@ -109,7 +111,7 @@ router.get('/', function(reg, res){
   // test.then(function(data){
   //   // console.log(data);
   // });
-  
+
 });
 
 module.exports = router;
