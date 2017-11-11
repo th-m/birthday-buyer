@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 // import firebase from 'firebase'
 var firebase = require('firebase');
 const config = {
@@ -41,7 +42,7 @@ firebaseAuth().signInWithEmailAndPassword("buyer@bot.com", "buystuff").then(func
   let myInit = {
                 method: "POST",
                  headers: myHeaders,
-                 body: urlEncodedData,
+                 // body: urlEncodedData,
                  mode: 'cors',
                  cache: 'default' 
                };
