@@ -27,12 +27,36 @@ firebaseAuth().signInWithEmailAndPassword("buyer@bot.com", "buystuff").then(func
     console.log("Something went wrong.");
     console.log(error);
   }
+  let urlEncodedDataPairs = [];
+  urlEncodedDataPairs.push(encodeURIComponent("test"]) + '=' + encodeURIComponent('value'));
   
-  fetch('https://birthdaybuyer.herokuapp.com/').then(function(response) {
+  // for (var entry of formData.entries()){
+  //    urlEncodedDataPairs.push(encodeURIComponent(entry[0]) + '=' + encodeURIComponent(entry[1]));
+  // }
+  urlEncodedData = urlEncodedDataPairs.join('&').replace(/%20/g, '+');
+  let myHeaders = new Headers();
+  myHeaders.append('Content-Type', 'application/x-www-form-urlencoded');
+  myHeaders.append('Accept', 'text/html'); 
+
+  let myInit = {
+                method: "POST",
+                 headers: myHeaders,
+                 body: urlEncodedData,
+                 mode: 'cors',
+                 cache: 'default' 
+               };
+           
+  fetch('https://birthdaybuyer.herokuapp.com/', myInit).then(function(response) {
     return response.blob();
-  }).then(function(myBlob) {
-   console.log(myBlob);
+  }).then(function(data) {
+    if(data.error){
+      console.log(data.error);
+    }else{
+      console.log(data);
+    }
   });
+  
+  
   
 });
 // export const ref = firebase.database().ref()
