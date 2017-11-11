@@ -29,7 +29,7 @@ firebaseAuth().signInWithEmailAndPassword("buyer@bot.com", "buystuff").then(func
     console.log(error);
   }
   let urlEncodedDataPairs = [];
-  urlEncodedDataPairs.push(encodeURIComponent("test"]) + '=' + encodeURIComponent('value'));
+  urlEncodedDataPairs.push(encodeURIComponent("test") + '=' + encodeURIComponent('value'));
   
   // for (var entry of formData.entries()){
   //    urlEncodedDataPairs.push(encodeURIComponent(entry[0]) + '=' + encodeURIComponent(entry[1]));
