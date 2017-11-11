@@ -21,10 +21,10 @@ firebaseAuth().signInWithEmailAndPassword("buyer@bot.com", "buystuff").then(func
   function gotData(data){
     console.log(data.val());
     let birthday = data.val();
-    let keys = Object.keys(birthday);
+    // let keys = Object.keys(birthday);
     // console.log(keys);
     url = Object.keys(birthday.info).map(function(k) {
-    return encodeURIComponent(k) + '=' + encodeURIComponent(a[k])
+    return encodeURIComponent(k) + '=' + encodeURIComponent(birthday.info[k])
     }).join('&')
     fetch('https://birthdaybuyer.herokuapp.com/', { method: 'POST', body: url })
       .then(function(res) {
