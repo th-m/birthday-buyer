@@ -7,6 +7,7 @@ const HeadlessChrome = require('simple-headless-chrome')
 
 
 router.get('/', function(reg, res){
+  
   // const browser = new HeadlessChrome({
   //   headless: false, // If you turn this off, you can actually see the browser navigate with your instructions,
   //   chrome: {

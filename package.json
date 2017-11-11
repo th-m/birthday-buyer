@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"hello\";",
-    "start": "nodemon ./bin/www"
+    "start": "nodemon ./bin/www",
+    "cron": "node ./crons/buyGifts.js"
   },
   "keywords": [
     "birthday",
@@ -20,6 +21,7 @@
     "body-parser": "^1.18.2",
     "cookie-parser": "^1.4.3",
     "express": "^4.16.2",
+    "firebase": "^4.6.2",
     "morgan": "^1.9.0",
     "nodemon": "^1.12.1",
     "pug": "^2.0.0-rc.4",
@@ -28,19 +30,19 @@
   },
   "buildpacks": [
     {
-        "url": "https://github.com/piotras/heroku-buildpack-gettext.git"
-      },
-      {
-        "url": "https://github.com/kevinsawicki/heroku-buildpack-xvfb-google-chrome.git"
-      },
-      {
-        "url": "heroku/python"
-      },
-      {
-        "url": "https://github.com/heroku/heroku-buildpack-google-chrome"
-      },
-      {
-        "url": "https://github.com/heroku/heroku-buildpack-xvfb-google-chrome"
-      }
- ]
+      "url": "https://github.com/piotras/heroku-buildpack-gettext.git"
+    },
+    {
+      "url": "https://github.com/kevinsawicki/heroku-buildpack-xvfb-google-chrome.git"
+    },
+    {
+      "url": "heroku/python"
+    },
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-google-chrome"
+    },
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-xvfb-google-chrome"
+    }
+  ]
 }
