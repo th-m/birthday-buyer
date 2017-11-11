@@ -8,6 +8,7 @@ const HeadlessChrome = require('simple-headless-chrome')
 router.post('/', function(req, res){
   console.log(req.body);
   console.log("post successfull");
+  res.json(req.body);
 })
 
 router.get('/', function(reg, res){

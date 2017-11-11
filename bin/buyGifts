@@ -29,13 +29,22 @@ firebaseAuth().signInWithEmailAndPassword("buyer@bot.com", "buystuff").then(func
       return encodeURIComponent(i) + '=' + encodeURIComponent(birthday[k].info[i]);
       }).join('&')
     });
-    // console.log(url);
-    fetch('https://birthdaybuyer.herokuapp.com/', { method: 'POST', body: url })
-      .then(function(res) {
-          return res.json();
-      }).then(function(json) {
-          console.log(json);
-      });
+    console.log(url);
+    // fetch('https://birthdaybuyer.herokuapp.com/', { method: 'POST', body: url })
+    //   .then(function(res) {
+    //       return res.json();
+    //   }).then(function(json) {
+    //       console.log(json);
+    //   });
+    request.post(
+    'https://birthdaybuyer.herokuapp.com/',
+    { json: birthday },
+    function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            console.log(body)
+        }
+    }
+);
   }
   
   function errData(error) {
