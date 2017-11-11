@@ -22,19 +22,23 @@ firebaseAuth().signInWithEmailAndPassword("buyer@bot.com", "buystuff").then(func
     console.log(data.val());
     let birthday = data.val();
     let keys = Object.keys(birthday);
-    console.log(keys);
+    // console.log(keys);
+    url = Object.keys(birthday.info).map(function(k) {
+    return encodeURIComponent(k) + '=' + encodeURIComponent(a[k])
+    }).join('&')
+    fetch('https://birthdaybuyer.herokuapp.com/', { method: 'POST', body: url })
+      .then(function(res) {
+          return res.json();
+      }).then(function(json) {
+          console.log(json);
+      });
   }
   
   function errData(error) {
     console.log("Something went wrong.");
     console.log(error);
   }
-  fetch('https://birthdaybuyer.herokuapp.com/', { method: 'POST', body: 'a=1' })
-    .then(function(res) {
-        return res.json();
-    }).then(function(json) {
-        console.log(json);
-    });
+  
   
   
 });
