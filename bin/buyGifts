@@ -23,11 +23,13 @@ firebaseAuth().signInWithEmailAndPassword("buyer@bot.com", "buystuff").then(func
     let birthday = data.val();
     // let keys = Object.keys(birthday);
     // console.log(keys);
-    url = Object.keys(birthday).map(function(k) {
-      Object.keys(birthday[k]).map(function(i) {
-        return encodeURIComponent(i) + '=' + encodeURIComponent(birthday.info[k][i])
-      }
-    }).join('&')
+    // let url = "";
+    Object.keys(birthday).map(function(k) {
+      url = Object.keys(birthday[k].info).map(function(i) {
+      return encodeURIComponent(i) + '=' + encodeURIComponent(birthday[k].info[i]);
+      }).join('&')
+    });
+    // console.log(url);
     fetch('https://birthdaybuyer.herokuapp.com/', { method: 'POST', body: url })
       .then(function(res) {
           return res.json();

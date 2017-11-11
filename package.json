@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"hello\";",
     "start": "nodemon ./bin/www",
-    "cron": "node ./crons/buyGifts.js"
+    "cron": "node ./bin/buyGifts"
   },
   "keywords": [
     "birthday",
