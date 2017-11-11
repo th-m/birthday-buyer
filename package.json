@@ -27,8 +27,20 @@
     "simple-headless-chrome": "^4.3.10"
   },
   "buildpacks": [
-   {
-     "url": "https://github.com/heroku/heroku-buildpack-google-chrome"
-   }
+    {
+        "url": "https://github.com/piotras/heroku-buildpack-gettext.git"
+      },
+      {
+        "url": "https://github.com/kevinsawicki/heroku-buildpack-xvfb-google-chrome.git"
+      },
+      {
+        "url": "heroku/python"
+      }
+      {
+        "url": "https://github.com/heroku/heroku-buildpack-google-chrome"
+      },
+      {
+        "url": "https://github.com/heroku/heroku-buildpack-xvfb-google-chrome"
+      }
  ]
 }
